@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "English Syntax Highlighter",
+    "version": "0.1.0",
+    "description": "Highlights bodies of text",
+    "browser_action": {
+        "default_title": "EngSynHi",
+        "default_icon": "assets/icons/icon-16.png"
+    },
+    "icons": {
+        "16": "assets/icons/icon-16.png",
+        "48": "assets/icons/icon-48.png",
+        "128": "assets/icons/icon-128.png"
+    },
+    "content_scripts":[
+        {
+            "matches":["<all_urls>"],
+            "js":["highlighter.js"]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "assets/js/background.js"
+        ]
+    },
+    "short_name": "EngSynHi",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
